@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    healthcheck:
+      test: /usr/bin/mysql --user=$$MYSQL_USER --password=$$MYSQL_PASSWORD --execute="SHOW DATABASES;"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    ports:
+      - '3306:3306'
+    environment:
+      - TZ
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+    volumes:
+      - .docker/volumes/db_data:/var/lib/mysql:rw
+    user: mysql
+    env_file:
+      - .env
