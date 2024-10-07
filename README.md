@@ -20,7 +20,6 @@ stärker auf die Markenkommunikation konzentrieren kann.
 * **Normalisierung von Kommentaren**, die in verschiedenen Sprachen, Schriftarten und mit Emojis verfasst sind
 * **Effiziente Bearbeitung von Kommentaren**, insbesondere bei einer hohen Anzahl (Zusammenfassungen statt einzelner Betrachtungen) 
 * **Inkrementelle Analyse neuer Kommentare** über einen bestimmten Zeitraum (optional) 
-
 ## Daten 
 
 Für die Challenge stellen wir euch Exporte von Kommentaren unserer Community zu verschiedenen TikTok Video Posts im CSV-Dateiformat bereit.
@@ -36,7 +35,7 @@ Ihr könnt dieses ganz nach Belieben anpassen oder ganz eigene Wege gehen.
 
 ### Installation
 
-Um das Notebook auszuführen muss zuertst JupyterLab installiert werden.
+Um das Notebook auszuführen muss zuerst JupyterLab installiert werden.
 
 ```bash
 pip install jupyterlab
@@ -47,11 +46,11 @@ Als nächstes kann der JupyterLab Server mit folgendem Kommando gestartet werden
 jupyter lab
 ```
 
-Jupyter Lab sollte im browser sich automatisch öffnen. Falls nicht dann ruft folgende URL auf: http://localhost:8888/lab.
+Jupyter Lab sollte den Browser automatisch öffnen. Falls nicht dann ruft folgende URL auf: http://localhost:8888/lab
 
 ### Setup
 
-Damit secrets nicht in der Versionsverwaltung gespeichert werden, definieren wir diese in einer separaten `.env` Datei. Hierfür kann die `.env.example` als Vorlage verwendet werden.
+Damit Secrets nicht in der Versionsverwaltung gespeichert werden, definieren wir diese in einer separaten `.env` Datei. Hierfür kann die `.env.example` als Vorlage verwendet werden.
 
 ```bash
 cp .env.example .env
