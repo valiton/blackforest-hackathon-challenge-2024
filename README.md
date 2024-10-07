@@ -36,22 +36,22 @@ Ihr könnt dieses ganz nach Belieben anpassen oder ganz eigene Wege gehen.
 
 ### Installation
 
-First install JupyterLab to run the notebook.
+Um das Notebook auszuführen muss zuertst JupyterLab installiert werden.
 
 ```bash
 pip install jupyterlab
 ```
-Next start JupyterLab Server
+Als nächstes kann der JupyterLab Server mit folgendem Kommando gestartet werden
 
 ```bash
 jupyter lab
 ```
 
-Jupyter Lab will open in the browser. If not please try to open http://localhost:8888/lab.
+Jupyter Lab sollte im browser sich automatisch öffnen. Falls nicht dann ruft folgende URL auf: http://localhost:8888/lab.
 
 ### Setup
 
-To keep your secrets separated from the commited source code - we define them in a `.env` file. You can copy the `.env.example` file as a template. 
+Damit secrets nicht in der Versionsverwaltung gespeichert werden, definieren wir diese in einer separaten `.env` Datei. Hierfür kann die `.env.example` als Vorlage verwendet werden.
 
 ```bash
 cp .env.example .env
@@ -59,8 +59,7 @@ cp .env.example .env
 
 ### Database (option)
 
-In case you would like to work with a database you can spin-up a MySQL Database with Docker.
-The `docker-compose` file relays on configured values in the `.env` file.
+Falls ihr eine Datenbank benutzen möchtet, könnt ihr eine MySQL Datenbank schnell mit Docker hoch fahren. Die `docker-compose` Datei benutzt die Umgebungsvariablen, die in der zuvor erstellten `.env` datei angelegt wurden.
 
 ```bash
 docker-compose up db
