@@ -35,7 +35,20 @@ Ihr könnt dieses ganz nach Belieben anpassen oder ganz eigene Wege gehen.
 
 ### Installation
 
-Um das Notebook auszuführen muss zuerst JupyterLab installiert werden.
+Damit das Notebook in einer eigenen Umgebung läuft ist es Sinnvoll das Ganze in einem Virtuellen Environment auszuführen.
+Das Virtuelle Environment kann innerhalb des Projektverzeichnisses wie folgt erstellt werden:
+
+```bash
+python -m venv ./.venv
+```
+
+Anschließend muss die Virtuelle Umgebung mit folgendem Kommando aktiviert werden:
+
+```bash
+source .venv/bin/activate
+```
+
+Jetzt kann man JupyterLab in der Virtuellen Umgebung installieren. JupyterLab wird benötigt zum ausführen der Notebooks.
 
 ```bash
 pip install jupyterlab
@@ -63,3 +76,7 @@ Falls ihr eine Datenbank benutzen möchtet, könnt ihr eine MySQL Datenbank schn
 ```bash
 docker-compose up db
 ```
+
+### Datenbasis
+
+Die Jupyter Notebooks laden Standardmäßig eine CSV Datei mit dem Namen **comments.csv**. Ihr könnt als Beispiel eine der zur Verfügung gestellten Exportdatei aus dem Zip-Archiv umbenennen und in das Projektverzeichnis mit dem angegebenen Namen ablegen. Dann sollte diese Datei für die Notebooks genutzt werden.
