@@ -20,7 +20,6 @@ stärker auf die Markenkommunikation konzentrieren kann.
 * **Normalisierung von Kommentaren**, die in verschiedenen Sprachen, Schriftarten und mit Emojis verfasst sind
 * **Effiziente Bearbeitung von Kommentaren**, insbesondere bei einer hohen Anzahl (Zusammenfassungen statt einzelner Betrachtungen) 
 * **Inkrementelle Analyse neuer Kommentare** über einen bestimmten Zeitraum (optional) 
-
 ## Daten 
 
 Für die Challenge stellen wir euch Exporte von Kommentaren unserer Community zu verschiedenen TikTok Video Posts im CSV-Dateiformat bereit.
@@ -36,22 +35,35 @@ Ihr könnt dieses ganz nach Belieben anpassen oder ganz eigene Wege gehen.
 
 ### Installation
 
-First install JupyterLab to run the notebook.
+Damit das Notebook in einer eigenen Umgebung läuft ist es Sinnvoll das Ganze in einem Virtuellen Environment auszuführen.
+Das Virtuelle Environment kann innerhalb des Projektverzeichnisses wie folgt erstellt werden:
+
+```bash
+python -m venv ./.venv
+```
+
+Anschließend muss die Virtuelle Umgebung mit folgendem Kommando aktiviert werden:
+
+```bash
+source .venv/bin/activate
+```
+
+Jetzt kann man JupyterLab in der Virtuellen Umgebung installieren. JupyterLab wird benötigt zum ausführen der Notebooks.
 
 ```bash
 pip install jupyterlab
 ```
-Next start JupyterLab Server
+Als nächstes kann der JupyterLab Server mit folgendem Kommando gestartet werden
 
 ```bash
 jupyter lab
 ```
 
-Jupyter Lab will open in the browser. If not please try to open http://localhost:8888/lab.
+Jupyter Lab sollte den Browser automatisch öffnen. Falls nicht dann ruft folgende URL auf: http://localhost:8888/lab
 
 ### Setup
 
-To keep your secrets separated from the commited source code - we define them in a `.env` file. You can copy the `.env.example` file as a template. 
+Damit Secrets nicht in der Versionsverwaltung gespeichert werden, definieren wir diese in einer separaten `.env` Datei. Hierfür kann die `.env.example` als Vorlage verwendet werden.
 
 ```bash
 cp .env.example .env
@@ -59,9 +71,12 @@ cp .env.example .env
 
 ### Database (option)
 
-In case you would like to work with a database you can spin-up a MySQL Database with Docker.
-The `docker-compose` file relays on configured values in the `.env` file.
+Falls ihr eine Datenbank benutzen möchtet, könnt ihr eine MySQL Datenbank schnell mit Docker hoch fahren. Die `docker-compose` Datei benutzt die Umgebungsvariablen, die in der zuvor erstellten `.env` datei angelegt wurden.
 
 ```bash
 docker-compose up db
 ```
+
+### Datenbasis
+
+Die Jupyter Notebooks laden Standardmäßig eine CSV Datei mit dem Namen **comments.csv**. Ihr könnt als Beispiel eine der zur Verfügung gestellten Exportdatei aus dem Zip-Archiv umbenennen und in das Projektverzeichnis mit dem angegebenen Namen ablegen. Dann sollte diese Datei für die Notebooks genutzt werden.
